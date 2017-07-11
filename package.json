@@ -1,0 +1,20 @@
+{
+  "name": "decode-jwt",
+  "version": "0.0.1",
+  "description": "decode a JWT via CLI",
+  "main": "index.js",
+  "bin": {
+    "jwt": "./index.js"
+  },
+  "keywords": [
+    "jwt",
+    "decde"
+  ],
+  "author": {
+    "email": "thomduerr@gmail.com"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "jsonwebtoken": "^7.4.1"
+  }
+}
