@@ -4,11 +4,12 @@
   "description": "decode a JWT via CLI",
   "main": "index.js",
   "bin": {
-    "jwt": "./index.js"
+    "jwt": ".bin/decode-jwt.js"
   },
   "keywords": [
     "jwt",
-    "decode"
+    "decode",
+    "cli"
   ],
   "author": " <thomduerr@gmail.com>",
   "license": "MIT",
