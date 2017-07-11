@@ -4,7 +4,7 @@
   "description": "decode a JWT via CLI",
   "main": "index.js",
   "bin": {
-    "jwt": ".bin/decode-jwt.js"
+    "jwt": "./bin/decode-jwt.js"
   },
   "keywords": [
     "jwt",
