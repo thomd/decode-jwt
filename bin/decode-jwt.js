@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
-var jwt = require('jsonwebtoken')
+const jwt = require('jsonwebtoken')
 
-if(process.stdin.isTTY && !process.argv[2]) {
+if (process.stdin.isTTY && !process.argv[2]) {
   console.log(`
 Usage:
 
@@ -11,26 +11,26 @@ Usage:
 
 `)
 } else {
-  var file = process.argv[2]
-  if(file) {
+  const file = process.argv[2]
+  if (file) {
     decode(require('fs').readFileSync(file, 'utf8'))
   } else {
-    var data = ''
-    var self = process.stdin
-    self.on('readable', function() {
-      var chunk = this.read()
-      if(chunk != null) {
+    let data = ''
+    const self = process.stdin
+    self.on('readable', function () {
+      const chunk = this.read()
+      if (chunk !== null) {
         data += chunk
       }
     })
-    self.on('end', function() {
+    self.on('end', () => {
       decode(data)
     })
   }
 }
 
 function decode(data) {
-  var token = data.replace(/\r?\n$/,'')
-  var decoded = jwt.decode(token, {complete: true})
+  const token = data.replace(/\r?\n$/, '')
+  const decoded = jwt.decode(token, {complete: true})
   process.stdout.write(JSON.stringify(decoded, null, 2))
 }

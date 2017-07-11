@@ -13,8 +13,15 @@
   ],
   "author": " <thomduerr@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "lint": "xo --space --no-semicolon",
+    "prepublish": "npm run lint"
+  },
   "dependencies": {
     "jsonwebtoken": "^7.4.1"
+  },
+  "devDependencies": {
+    "xo": "^0.18.2"
   },
   "repository": {
     "type": "git",
